@@ -1,0 +1,16 @@
+---
+# vars file for system_manager
+nginx_package: "nginx"
+users:
+  - name: "Vikas"
+    state: "present"
+  - name: "Arjun"
+    state: "present"
+git_repositories:
+  - repo_url: "https://github.com/opstree/spring3hibernate"
+    dest: "/home/ubuntu/spring3hibernate"
+  - repo_url: "https://github.com/opstree/spring3hibernate"
+    dest: "/home/ubuntu/spring3hibernate"
+folder_structures:
+  - "/home/ubuntu/folder1"
+  - "/home/ubuntu/folder2" 

@@ -1,0 +1,3 @@
+Node1 ansible_user=ubuntu ansible_host=34.224.100.56
+Node2 ansible_user=ubuntu ansible_host=52.4.158.210
+
