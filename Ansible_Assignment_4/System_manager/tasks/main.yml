@@ -1,0 +1,21 @@
+---
+
+- name: Install Nginx
+  ansible.builtin.package:
+    name: "{{ nginx_package }}"
+    state: present
+- name: Manage users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ users }}"
+- name: Clone git repositories
+  ansible.builtin.git:
+    repo: "{{ item.repo_url }}"
+    dest: "{{ item.dest }}"
+  loop: "{{ git_repositories }}"
+- name: Create folder structures
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop: "{{ folder_structures }}"

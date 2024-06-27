@@ -1,0 +1,19 @@
+- name: Validate Nginx configuration and restart Nginx
+  hosts: all
+  become: yes
+  tasks:
+    - name: Validate Nginx configuration
+      command: nginx -t
+      ignore_errors: yes
+      register: nginx_test
+
+    - name: Display Nginx configuration test result
+      debug:
+        var: nginx_test
+
+    - name: Restart Nginx service
+      service:
+        name: nginx
+        state: restarted
+      when: nginx_test.rc == 0
+

@@ -1,0 +1,6 @@
+---
+- name: System_manager
+  hosts: manager
+  become: yes
+  roles:
+    - role: System_manager
